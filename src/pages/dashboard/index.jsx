@@ -1,6 +1,6 @@
 import './index.scss';
 import {Link} from 'react-router-dom';
-import DashboardLayout from '/src/components/layouts/DashboardLayout';
+import DashboardLayout from '../../components/layouts/dashboardLayout';
 import { useEffect, useState } from 'react';
 import { account } from '/src/lib/appwriteConfig';
 
