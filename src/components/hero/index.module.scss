@@ -1,0 +1,97 @@
+@import '/src/assets/scss/variables';
+@import '/src/assets/scss/breakpoint';
+.hero {
+    width: 100%;
+    position: relative;
+    padding-top: 2rem;
+    // height: 100vh;
+}
+
+.hero__innerwrapper {
+    display: flex;
+    max-width: $wrapper-max-width;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: $wrapper-padding;
+    margin: 0 auto;
+    @include breakpoint-custom-down(950) {
+        flex-direction: column;
+    }
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 45%;
+    height: 100%;
+    @include breakpoint-custom-down(950) {
+        width: 100%;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 2.318rem + 0.91vw, 3rem);
+        font-weight: 700;
+        color: #000;
+        margin-bottom: 1rem;
+        @include breakpoint-custom-down(950) {
+            text-align: center;
+        }
+    }
+
+    p {
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: #333;
+        margin-bottom: 2rem;
+        @include breakpoint-custom-down(950) {
+            text-align: center;
+        }
+    }
+
+    .hero__btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background-color: #000;
+        color: $white;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        @include breakpoint-custom-down(950) {
+            width: 200px;
+            text-align: center;
+        }
+
+        &:hover {
+            background-color: #000000e2;
+        }
+    }
+}
+
+.hero__image {
+    width: 46%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+        @include breakpoint-custom-down(950) {
+            width: 70%;
+        }
+        @include breakpoint-custom-down(540) {
+            width: 100%;
+        }
+
+    img {
+        max-width: 100%;
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        border-radius: 30px;
+    }
+}

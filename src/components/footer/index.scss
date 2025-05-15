@@ -1,0 +1,203 @@
+@import '/src/assets/scss/variables';
+@import '/src/assets/scss/breakpoint';
+//footerlist styles
+.footer-ul {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    width: 25.33%;
+    @include breakpoint-custom-down(540) {
+        width: 100%;
+    }
+
+    span {
+        color: $white;
+        font-size: 1rem;
+        line-height: 1.1;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    li {
+
+        a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 1rem;
+            line-height: 1.1;
+            font-weight: 400;
+            transition: all .4s ease-in;
+        }
+    }
+}
+
+
+.footer {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+}
+
+.footer-innerwrapper {
+    max-width: $wrapper-max-width;
+    display: flex;
+    margin: 0 auto;
+    padding: $wrapper-padding;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+}
+
+.footer-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    padding-bottom: 1.5rem;
+    @include breakpoint-custom-down(1098) {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.logo {
+    width: 120px;
+    height: 100%;
+
+    // img {
+    //     width: 100%;
+    //     height: inherit;
+    //     object-fit: cover;
+    // }
+
+    span {
+        font-size: 1.5rem;
+        color: $white;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+.footer-top--nav {
+    display: flex;
+    flex: 1 1 0;
+    margin-left: 2.5rem;
+    align-items: baseline;
+    justify-content: space-between;
+    @include breakpoint-custom-down(1098) {
+        margin-left: 0;
+        // flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+    }
+    @include breakpoint-custom-down(540) {
+            flex-direction: column;
+            margin-bottom: 1rem;
+    }
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    @include breakpoint-custom-down(768) {
+       width: 80%;
+    }
+
+    .newsletter-innerwrapper {
+        width: 100%;
+
+        h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: $white;
+            line-height: 1.1;
+        }
+
+        p {
+            font-size: .875rem;
+            margin-bottom: 1rem;
+            color: $white;
+            line-height: 1.1;
+        }
+
+        input {
+            padding: 10px 16px;
+            width: 100%;
+            border: none;
+        }
+
+        span {
+            color: $white;
+            font-size: .875rem;
+            line-height: 1;
+            font-weight: 400;
+
+            a {
+                color: $primary-blue;
+            }
+        }
+    }
+}
+
+.footer-line {
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+}
+
+.footer-bottom {
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    @include breakpoint-custom-down(768) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+    }
+
+    p {
+        font-size: .875rem;
+        color: $white;
+        line-height: 1.1;
+        font-weight: 400;
+
+        a {
+            color: $white;
+            text-decoration: underline;
+            font-weight: 600;
+
+            &:hover {
+                color: #ccc;
+            }
+        }
+    }
+
+    .footer-privacy {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        a {
+            color: #ccc;
+            font-size: 1rem;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}

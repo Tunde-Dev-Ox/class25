@@ -1,0 +1,49 @@
+@import '/src/assets/scss/variables';
+.sectionTop {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 100%;
+    padding-bottom: 1.5rem;
+    width: 100%;
+}
+
+.sectionTop--left {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $black;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 1rem;
+        color: $inactive-text;
+        margin-bottom: 1rem;
+    }
+}
+
+.sectionTop--right {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: right;
+
+    a {
+        font-size: 1rem;
+        text-decoration: none;
+        margin-bottom: 1rem;
+        text-align: right;
+        color: $dark-blue;
+        border-bottom: 1px solid $primary-blue;
+    }
+}
