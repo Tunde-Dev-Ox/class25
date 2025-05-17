@@ -1,31 +1,33 @@
-import MainHeader from '../../components/headers/MainHeader';
-import Hero from '../../components/hero';
-import Footer from '../../components/footer';
-import ProductValue from '../../components/productvalue';
-import { IoCall } from 'react-icons/io5';
-// import { Link } from 'react-router-dom';
-import { GiReturnArrow } from 'react-icons/gi';
-import { FaGift } from 'react-icons/fa';
-import { VscWorkspaceTrusted } from "react-icons/vsc";
-// import HomeBlogCard from '../../components/cards/HomeBlogCard';
-import styles from './index.module.scss';
+// Will open for launching the app
+// import MainHeader from '../../components/headers/MainHeader';
+// import Hero from '../../components/hero';
+// import Footer from '../../components/footer';
+// import ProductValue from '../../components/productvalue';
+// import { IoCall } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
-import { useUser } from '../../context/index.js';
-import Steps from '../../components/how-it-works';
-import TestimonialCard from '../../components/cards/testimonialCard'
-import Faq from '../../components/faq';
-import homeFaqs from '../../utils/faqData.js';
+// import { GiReturnArrow } from 'react-icons/gi';
+// import { FaGift } from 'react-icons/fa';
+// import { VscWorkspaceTrusted } from "react-icons/vsc";
+// // import HomeBlogCard from '../../components/cards/HomeBlogCard';
+import styles from './index.module.scss';
+// import { Link } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
+// import { useUser } from '../../context/index.js';
+// import Steps from '../../components/how-it-works';
+// import TestimonialCard from '../../components/cards/testimonialCard'
+// import Faq from '../../components/faq';
+// import homeFaqs from '../../utils/faqData.js';
+import WaitlistSlider from '../../components/sliders/waitlistSlider';
 
 
 const Home = () => {
-    const { user } = useUser();
-    if (user) return <Navigate to="/dashboard" />
+    // const { user } = useUser();
+    // if (user) return <Navigate to="/dashboard" />
     return (
         <div className='app'>
-            <MainHeader />
+            {/* <MainHeader /> */}
             <main>
-                <Hero />
+                {/* <Hero />
                 <div className={styles.suggestion}>
                     <div className={styles.suggestion__innerwrapper}>
                         <h2>
@@ -264,7 +266,49 @@ const Home = () => {
                        />
                     </div>
                 </div>
-                <Footer />
+                <Footer /> */}
+                <div className={styles.waitlist}>
+                    <div className={styles.waitlist__innerwrapper}>
+                        <div className={styles.waitlist__content__text}>
+                            <header>
+                                <Link to="/">
+                                    <span className={styles.logo}>
+                                        Zafique.
+                                    </span>
+                                </Link>
+                            </header>
+                            <span className={styles.coming__soon}>
+                                Coming soon to your city
+                            </span>
+                            <h1>
+                                You host, we <span>clean</span>
+                            </h1>
+                            <p className={styles.waitlist__content__text__description}>
+                                We connect Airbnb hosts and shortlet property owners with trusted, on-demand cleaners — so every guest walks into perfection.
+                            </p>
+                            <div className={styles.join__waitlist}>
+                                <Link to="https://tally.so/embed/mDyd2N?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" className={styles.join__waitlist__btn}>
+                                    Join the waitlist
+                                </Link>
+                            </div>
+                            <div className={styles.waitlist__progress}>
+                                <div className={styles.waitlist__progress__innerwrapper}>
+                                    <div className={styles.waitlist__progress__bar}>
+                                        <div className={styles.waitlist__progress__bar__fill}></div>
+                                    </div>
+                                    <span className={styles.waitlist__progress__text}>
+                                        100 hosts have joined the waitlist
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.waitlist__content__image}>
+                            <div className={styles.waitlist__content__image__wrapper}>
+                                <WaitlistSlider />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
         </div>
     )
