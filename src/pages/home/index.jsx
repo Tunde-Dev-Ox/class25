@@ -273,12 +273,12 @@ const Home = () => {
                             <header>
                                 <Link to="/">
                                     <span className={styles.logo}>
-                                        Zafique.
+                                        Lovelodge.
                                     </span>
                                 </Link>
                             </header>
                             <span className={styles.coming__soon}>
-                                Coming soon to your city
+                                For Airbnb, Vrbo, and shortlet property owners
                             </span>
                             <h1>
                                 You host, we <span>clean</span>
@@ -287,8 +287,8 @@ const Home = () => {
                                 We connect Airbnb hosts and shortlet property owners with trusted, on-demand cleaners — so every guest walks into perfection.
                             </p>
                             <div className={styles.join__waitlist}>
-                                <Link to="https://tally.so/embed/mDyd2N?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" className={styles.join__waitlist__btn}>
-                                    Join the waitlist
+                                <Link to="https://forms.gle/uDcxwLRjBbYWC9S5A" className={styles.join__waitlist__btn}>
+                                    Make your first booking
                                 </Link>
                             </div>
                             <div className={styles.waitlist__progress}>
@@ -297,7 +297,7 @@ const Home = () => {
                                         <div className={styles.waitlist__progress__bar__fill}></div>
                                     </div>
                                     <span className={styles.waitlist__progress__text}>
-                                        100 hosts have joined the waitlist
+                                        100 hosts have made the switch
                                     </span>
                                 </div>
                             </div>
