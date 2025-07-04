@@ -3,24 +3,36 @@ import styles from './index.module.scss';
 
 const sliderData = [
   {
-    image: 'https://images.unsplash.com/photo-1642505172378-a6f5e5b15580?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    text: 'Vetted cleaners trained for Airbnb standards',
+    image: 'https://img.freepik.com/premium-photo/close-up-portrait-man-wearing-hat_1048944-4817727.jpg?uid=R101262695&ga=GA1.1.266238237.1746697337&semt=ais_hybrid&w=740',
+    text: 'Prof. Stephen Olusoji, Dean of Faculty', 
   },
   {
-    image: 'https://images.pexels.com/photos/48889/cleaning-washing-cleanup-the-ilo-48889.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    text: 'On-time, same-day, or scheduled ahead',
+    image: 'https://img.freepik.com/free-photo/worldface-american-man-white-background_53876-31194.jpg?uid=R101262695&ga=GA1.1.266238237.1746697337&semt=ais_hybrid&w=740',
+    text: 'Prof. Albert Oikelome',
   },
   {
-    image: 'https://images.unsplash.com/photo-1684182309189-a1384f3d7d4c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    text: 'Cleaners send photo proof when done',
+    image: 'https://img.freepik.com/free-photo/portrait-young-beautiful-african-girl-dark-wall_176420-5815.jpg?uid=R101262695&ga=GA1.1.266238237.1746697337&semt=ais_hybrid&w=740',
+    text: 'Damilare Ogunmola, Organ Major',
   },
   {
-    image: 'https://images.unsplash.com/photo-1556740720-776b84291f8e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    text: 'Transparent pricing. Pay per clean. No stress.',
+    image: 'https://img.freepik.com/free-photo/medium-shot-smiley-man-posing-studio_23-2149415776.jpg?uid=R101262695&ga=GA1.1.266238237.1746697337&semt=ais_hybrid&w=740',
+    text: 'Oluwaseun Adebayo, Violin Major',
   },
   {
-    image: 'https://images.pexels.com/photos/3038552/pexels-photo-3038552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    text: 'Works for one unit or 100+ properties',
+    image: 'https://img.freepik.com/free-photo/handsome-sensitive-man-portrait_23-2149509829.jpg?uid=R101262695&ga=GA1.1.266238237.1746697337&semt=ais_hybrid&w=740',
+    text: 'Seun Jacobs, Organ Major',
+  },
+  {
+    image: 'https://img.freepik.com/free-photo/young-handsome-man-posing-with-hat_23-2148884336.jpg?uid=R101262695&ga=GA1.1.266238237.1746697337&semt=ais_hybrid&w=740',
+    text: 'Ayomide Olakanmi, Voice Major',
+  },
+  {
+    image: 'https://img.freepik.com/free-photo/portrait-man-wearing-eye-shadow_23-2148852583.jpg?uid=R101262695&ga=GA1.1.266238237.1746697337&semt=ais_hybrid&w=740',
+    text: 'Madueke JohnBosco, Voice Major',
+  },
+  {
+    image: 'https://img.freepik.com/premium-photo/afro-american-woman-mixed-race-posing-dark-background-urban-clothes-modern-pretty-smiling_188913-1681.jpg?uid=R101262695&ga=GA1.1.266238237.1746697337&semt=ais_hybrid&w=740',
+    text: 'Oluwatomi Akintibu, Voice Major',
   },
 ];
 
