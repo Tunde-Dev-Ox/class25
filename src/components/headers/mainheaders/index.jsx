@@ -19,7 +19,7 @@ const MainHeader = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/about">
+                                <Link to="/lecturers">
                                     Lecturers
                                 </Link>
                             </li>
