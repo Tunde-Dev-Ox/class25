@@ -1,0 +1,101 @@
+.profile_main {
+    width: 100%;
+    padding: 2rem;
+    background: url('/noise.svg') no-repeat center center;
+    background-size: cover;
+}
+
+.profile_header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #1c1b1c;
+    }
+
+    .profile_subtitle {
+        font-size: 1.25rem;
+        color: #4a4a4a;
+        max-width: 600px;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .profile_degree {
+        font-size: 1.25rem;
+        color: #272626;
+        margin-bottom: 0.5rem;
+        font-style: oblique;
+    }
+
+    .profile_major {
+        font-size: 1.25rem;
+        color: #272626;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+}
+
+// profile top
+
+.profile_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .profile_top__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem;
+
+        p {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #4a4a4a;
+            width: 45%;
+            font-style: italic;
+        }
+
+        .profileImage {
+            width: 50%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+
+.profile_content {
+    padding-top: 2rem;
+
+    .profile_content__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-width: 1200px;
+        margin: auto;
+        padding: 1rem;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1c1b1c;
+        }
+    }
+}

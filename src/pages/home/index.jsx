@@ -20,8 +20,8 @@ const Home = () => {
                                     <nav>
                                         <ul className={styles.main__header__nav}>
                                             <li>
-                                                <Link to="/">
-                                                    Meet finalist
+                                                <Link to="/meet-the-finalists">
+                                                    Meet finalists
                                                 </Link>
                                             </li>
                                             <li>
