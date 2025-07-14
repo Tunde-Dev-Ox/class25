@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const MainHeader = () => {
+const MainHeader = ({ hideButton }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
@@ -43,11 +44,13 @@ const MainHeader = () => {
               ))}
             </ul>
           </nav>
-          <div className="hidden md:block">
-            <button className="bg-[#281085] text-white border-none !px-4 !py-2 cursor-pointer text-[1rem] rounded hover:bg-[#3a1f8f]">
-              Meet the finalists
-            </button>
-          </div>
+          {!hideButton && (
+            <div className="hidden md:block">
+              <button className="bg-[#281085] text-white border-none !px-4 !py-2 cursor-pointer text-[1rem] rounded hover:bg-[#3a1f8f]">
+                Meet the finalists
+              </button>
+            </div>
+          )}
         </div>
         {/* Mobile dropdown menu with animation */}
         <div
@@ -88,6 +91,9 @@ const MainHeader = () => {
       </header>
     </div>
   );
+};
+MainHeader.propTypes = {
+  hideButton: PropTypes.bool,
 };
 
 export default MainHeader;

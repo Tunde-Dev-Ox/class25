@@ -33,7 +33,7 @@ const Home = () => {
                   </nav>
                 </div>
               </header> */}
-              <MainHeader />
+              <MainHeader hideButton={true} />
               <span className={styles.coming__soon}>
                 Creative Arts Department, University of Lagos
               </span>
