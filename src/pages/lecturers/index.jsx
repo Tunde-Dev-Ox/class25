@@ -27,7 +27,7 @@ const FinalistsPage = () => {
           content_type: "finalistsProfile",
           limit: finalistsPerPage,
           skip: (currentPage - 1) * finalistsPerPage,
-          order: "fields.name", // optional
+          order: "fields.name",
         });
         setFinalists(entries.items);
         setTotalItems(entries.total);
@@ -52,53 +52,61 @@ const FinalistsPage = () => {
     <div className="bg-cover">
       <MainHeader />
       <main>
-        <div
-          className="w-full relative h-auto"
+        {/* Hero Section */}
+        <section
+          className="hero-section w-full relative h-auto"
           style={{
-            background:
-              "url('https://www.mmu.ac.uk/sites/default/files/styles/1536px_x2/public/2025-07/6302BAP0987.jpg.webp?itok=vu2Ah6-q')",
+            background: "url('/lecturers-hero.jpg')",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
-          <div className="flex flex-col items-center justify-center max-w-[1200px] !mx-auto h-screen px-4">
-            <div className="text-center mb-8 flex flex-col items-center justify-center">
-              <h1 className="text-5xl md:text-6xl mb-4 text-[#f9f8fb] font-bold">
-                Meet the Class of 2025
+          {/* Overlay for shade */}
+          <div className="absolute inset-0 bg-black/40 pointer-events-none z-0" />
+          <div className="hero-content flex flex-col items-center justify-center min-h-[60vh] md:h-screen !px-4 !py-12 md:!py-0 relative z-10">
+            <div className="text-center !mb-8 flex flex-col items-center justify-center">
+              <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl !mb-4 text-[#f9f8fb] font-bold">
+                Meet our lecturers
               </h1>
-              <p className="text-lg md:text-xl text-[#eae9e9] max-w-xl leading-relaxed">
-                Celebrating five years of creativity, growth, and unforgettable
-                memories at the Creative Arts Department, University of Lagos.
+              <p className="hero-desc text-base sm:text-lg md:text-xl text-[#eae9e9] max-w-xl leading-relaxed">
+                Meet the artists, mentors, and visionaries behind our creative
+                journey
               </p>
-              <div className="mt-12 text-2xl text-[#f9f8fb] cursor-pointer bg-transparent border border-[#f9f8fb] flex items-center justify-center w-[50px] h-[50px] rounded-full transition-colors hover:text-[#eae9e9]">
+              <div className="hero-arrow !mt-12 text-2xl text-[#f9f8fb] cursor-pointer bg-transparent border border-[#f9f8fb] flex items-center justify-center w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] rounded-full transition-colors hover:text-[#eae9e9]">
                 <FaArrowDown />
               </div>
             </div>
           </div>
-        </div>
-        <div
-          className="w-full bg-[#f9f8fb] flex justify-start !pt-8 !bg-cover"
+        </section>
+
+        {/* Categories Section */}}
+        <section
+          className="categories-section w-full bg-[#f9f8fb] !bg-cover !pt-8"
           style={{ background: "url('/noise.svg') no-repeat" }}
         >
-          <ul className="flex flex-row gap-3 text-base text-[#281085] max-w-[1200px] w-full mx-auto items-center justify-start !pl-4">
-            {categories.map((cat) => (
-              <li key={cat.name}>
-                <Link
-                  to={cat.to}
-                  className="no-underline bg-[#281085] !px-4 !py-2 rounded transition font-medium text-base text-[#f9f8fb]"
-                >
-                  {cat.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div
-          className="w-full !pt-8 !pb-18 !pl-4 !bg-cover"
+          <div className="categories-nav max-w-[1200px] !mx-auto !px-4">
+            <div className="flex flex-wrap gap-2 sm:gap-3 text-base text-[#281085] items-center justify-center">
+              {categories.map((cat) => (
+                <div key={cat.name}>
+                  <div
+                    to={cat.to}
+                    className="category-link no-underline bg-[#281085] !px-3 !py-2 sm:px-4 rounded transition font-medium text-base text-[#f9f8fb]"
+                  >
+                    {cat.name}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Finalists Grid Section */}
+        <section
+          className="finalists-section w-full !pt-8 !pb-18 !bg-cover"
           style={{ background: "url('/noise.svg') no-repeat center center" }}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto px-4">
+          <div className="flex flex-row flex-wrap justify-center items-center gap-4">
             {isLoading ? (
               <p>Loading...</p>
             ) : (
@@ -110,35 +118,39 @@ const FinalistsPage = () => {
                   <Link
                     to={`/finalists/${finalist.fields.slug}`}
                     key={finalist.fields.slug}
-                    className="bg-[#f9f8fb] rounded-lg overflow-hidden border border-[#cbcaca] transition-transform hover:-translate-y-1 no-underline"
+                    className="finalist-card min-w-[356px] !min-h-[200px] bg-[#f9f8fb] rounded-lg overflow-hidden border border-[#cbcaca] transition-transform hover:-translate-y-1 no-underline flex flex-col"
                   >
-                    <figure className="m-0 w-full h-[200px] overflow-hidden">
+                    <figure className="finalist-image m-0 w-full h-[180px] sm:h-[200px] overflow-hidden">
                       <img
                         src={imageUrl}
                         alt={name}
                         className="w-full h-full object-cover transition-transform"
                       />
                     </figure>
-                    <div className="p-4 text-center">
-                      <h3 className="text-xl font-semibold my-2 text-black">
+                    <div className="finalist-info p-3 sm:p-4 text-center flex-1 flex flex-col justify-center">
+                      <h3 className="finalist-name text-lg sm:text-xl font-semibold my-2 text-black">
                         {name}
                       </h3>
-                      <p className="text-base text-gray-600">{major}</p>
+                      <p className="finalist-major text-sm sm:text-base text-gray-600">
+                        {major}
+                      </p>
                     </div>
                   </Link>
                 );
               })
             )}
           </div>
-        </div>
-        <div
-          className="flex justify-center gap-2 !bg-cover !pb-12"
+        </section>
+
+        {/* Pagination Section */}
+        <section
+          className="pagination-section flex flex-wrap !bg-cover justify-center gap-2 !pb-12"
           style={{ background: "url('/noise.svg') no-repeat center center" }}
         >
           <button
             onClick={prevPage}
             disabled={currentPage === 1}
-            className="!px-4 !py-2 bg-[#eee] border-none rounded font-bold text-base cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+            className="pagination-btn !px-3 !py-2 sm:px-4 bg-[#eee] border-none rounded font-bold text-base cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
           >
             Prev
           </button>
@@ -146,7 +158,7 @@ const FinalistsPage = () => {
             <button
               key={i + 1}
               onClick={() => paginate(i + 1)}
-              className={`!px-4 !py-2 bg-[#eee] border-none rounded font-bold text-base cursor-pointer ${
+              className={`pagination-btn !px-3 !py-2 sm:px-4 bg-[#eee] border-none rounded font-bold text-base cursor-pointer ${
                 currentPage === i + 1 ? "bg-[#281085] text-white" : ""
               }`}
             >
@@ -156,11 +168,11 @@ const FinalistsPage = () => {
           <button
             onClick={nextPage}
             disabled={currentPage === totalPages}
-            className="!px-4 !py-2 bg-[#eee] border-none rounded font-bold text-base cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+            className="pagination-btn !px-3 !py-2 sm:px-4 bg-[#eee] border-none rounded font-bold text-base cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
           >
             Next
           </button>
-        </div>
+        </section>
         <Footer />
       </main>
     </div>
