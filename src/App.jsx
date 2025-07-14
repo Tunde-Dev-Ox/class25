@@ -1,3 +1,4 @@
+import "./App.css";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./pages/home";
 import FinalistsPage from "./pages/finalists";

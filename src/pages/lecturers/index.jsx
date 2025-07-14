@@ -1,12 +1,11 @@
-import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
-import { FaArrowDown, FaInstagram, FaTiktok } from "react-icons/fa";
+import { FaArrowDown } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import client from "../../lib/contentful";
 import MainHeader from "../../components/headers/mainheaders";
-// import heroImage from "../../assets/lecturers-hero.jpg"; // Adjust the path as necessary
+import Footer from "../../components/Footer";
 
-const LecturersPage = () => {
+const FinalistsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const finalistsPerPage = 12;
   const [finalists, setFinalists] = useState([]);
@@ -42,45 +41,64 @@ const LecturersPage = () => {
     fetchFinalists();
   }, [currentPage]);
 
+  const categories = [
+    { name: "All", to: "/" },
+    { name: "Music", to: "/" },
+    { name: "Theatre", to: "/" },
+    { name: "Visual Arts", to: "/" },
+  ];
+
   return (
-    <div className={styles.finalists}>
+    <div className="bg-cover">
       <MainHeader />
-      <main className={styles.finalists_main}>
-        <div className={styles.finalists_hero}>
-          <div className={styles.finalists_hero__wrapper}>
-            <div className={styles.finalists_hero__content}>
-              <h1>Meet our Lecturers</h1>
-              <p>
-                Meet the artists, mentors, and visionaries behind your creative
-                journey.
+      <main>
+        <div
+          className="w-full relative h-auto"
+          style={{
+            background:
+              "url('https://www.mmu.ac.uk/sites/default/files/styles/1536px_x2/public/2025-07/6302BAP0987.jpg.webp?itok=vu2Ah6-q')",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="flex flex-col items-center justify-center max-w-[1200px] !mx-auto h-screen px-4">
+            <div className="text-center mb-8 flex flex-col items-center justify-center">
+              <h1 className="text-5xl md:text-6xl mb-4 text-[#f9f8fb] font-bold">
+                Meet the Class of 2025
+              </h1>
+              <p className="text-lg md:text-xl text-[#eae9e9] max-w-xl leading-relaxed">
+                Celebrating five years of creativity, growth, and unforgettable
+                memories at the Creative Arts Department, University of Lagos.
               </p>
-              <div className={styles.arrow}>
+              <div className="mt-12 text-2xl text-[#f9f8fb] cursor-pointer bg-transparent border border-[#f9f8fb] flex items-center justify-center w-[50px] h-[50px] rounded-full transition-colors hover:text-[#eae9e9]">
                 <FaArrowDown />
               </div>
             </div>
           </div>
-          <div className={styles.finalists_hero__image}>
-            <img src={"/lecturers-hero.jpg"} alt="Lecturers Hero" />
-          </div>
         </div>
-        <div className={styles.finalists_breadcrumb}>
-          <ul>
-            <li>
-              <Link to="/">All</Link>
-            </li>
-            <li>
-              <Link to="/">Music</Link>
-            </li>
-            <li>
-              <Link to="/">Theatre</Link>
-            </li>
-            <li>
-              <Link to="/">Visual Arts</Link>
-            </li>
+        <div
+          className="w-full bg-[#f9f8fb] flex justify-start !pt-8 !bg-cover"
+          style={{ background: "url('/noise.svg') no-repeat" }}
+        >
+          <ul className="flex flex-row gap-3 text-base text-[#281085] max-w-[1200px] w-full mx-auto items-center justify-start !pl-4">
+            {categories.map((cat) => (
+              <li key={cat.name}>
+                <Link
+                  to={cat.to}
+                  className="no-underline bg-[#281085] !px-4 !py-2 rounded transition font-medium text-base text-[#f9f8fb]"
+                >
+                  {cat.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
-        <div className={styles.finalists_grid}>
-          <div className={styles.finalists_grid__wrapper}>
+        <div
+          className="w-full !pt-8 !pb-18 !pl-4 !bg-cover"
+          style={{ background: "url('/noise.svg') no-repeat center center" }}
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto px-4">
             {isLoading ? (
               <p>Loading...</p>
             ) : (
@@ -92,14 +110,20 @@ const LecturersPage = () => {
                   <Link
                     to={`/finalists/${finalist.fields.slug}`}
                     key={finalist.fields.slug}
-                    className={styles.finalist_card}
+                    className="bg-[#f9f8fb] rounded-lg overflow-hidden border border-[#cbcaca] transition-transform hover:-translate-y-1 no-underline"
                   >
-                    <figure>
-                      <img src={imageUrl} alt={name} />
+                    <figure className="m-0 w-full h-[200px] overflow-hidden">
+                      <img
+                        src={imageUrl}
+                        alt={name}
+                        className="w-full h-full object-cover transition-transform"
+                      />
                     </figure>
-                    <div className={styles.finalist_card__content}>
-                      <h3>{name}</h3>
-                      <p>{major}</p>
+                    <div className="p-4 text-center">
+                      <h3 className="text-xl font-semibold my-2 text-black">
+                        {name}
+                      </h3>
+                      <p className="text-base text-gray-600">{major}</p>
                     </div>
                   </Link>
                 );
@@ -107,57 +131,40 @@ const LecturersPage = () => {
             )}
           </div>
         </div>
-        <div className={styles.pagination}>
-          <button onClick={prevPage} disabled={currentPage === 1}>
+        <div
+          className="flex justify-center gap-2 !bg-cover !pb-12"
+          style={{ background: "url('/noise.svg') no-repeat center center" }}
+        >
+          <button
+            onClick={prevPage}
+            disabled={currentPage === 1}
+            className="!px-4 !py-2 bg-[#eee] border-none rounded font-bold text-base cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+          >
             Prev
           </button>
           {Array.from({ length: totalPages }, (_, i) => (
             <button
               key={i + 1}
               onClick={() => paginate(i + 1)}
-              className={currentPage === i + 1 ? styles.activePage : ""}
+              className={`!px-4 !py-2 bg-[#eee] border-none rounded font-bold text-base cursor-pointer ${
+                currentPage === i + 1 ? "bg-[#281085] text-white" : ""
+              }`}
             >
               {i + 1}
             </button>
           ))}
-          <button onClick={nextPage} disabled={currentPage === totalPages}>
+          <button
+            onClick={nextPage}
+            disabled={currentPage === totalPages}
+            className="!px-4 !py-2 bg-[#eee] border-none rounded font-bold text-base cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+          >
             Next
           </button>
         </div>
-        <div className={styles.footer}>
-          <div className={styles.footer__wrapper}>
-            <p>
-              &copy; 2025 Creative Arts Department, University of Lagos. All
-              rights reserved.
-            </p>
-            <ul className={styles.finalists_footer__links}>
-              <li>
-                <a href="">
-                  <FaTiktok />
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <FaInstagram />
-                </a>
-              </li>
-            </ul>
-            <p className={styles.finalists_footer__copyright}>
-              Built with{" "}
-              <span role="img" aria-label="love">
-                ❤️
-              </span>{" "}
-              by{" "}
-              <a href="" target="_blank" rel="noopener noreferrer">
-                Joseph Tunde
-              </a>{" "}
-              and <a href="">Tolu Oduro</a>
-            </p>
-          </div>
-        </div>
+        <Footer />
       </main>
     </div>
   );
 };
 
-export default LecturersPage;
+export default FinalistsPage;

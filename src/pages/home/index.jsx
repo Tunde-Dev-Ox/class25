@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./index.module.scss";
 import WaitlistSlider from "../../components/sliders/waitlistSlider";
+import MainHeader from "../../components/headers/mainheaders";
 
 const Home = () => {
   return (
@@ -9,7 +10,7 @@ const Home = () => {
         <div className={styles.waitlist}>
           <div className={styles.waitlist__innerwrapper}>
             <div className={styles.waitlist__content__text}>
-              <header className={styles.main__header}>
+              {/* <header className={styles.main__header}>
                 <div className={styles.main__header_wrapper}>
                   <div className={styles.main_logo}>
                     <Link>Casa25</Link>
@@ -31,7 +32,8 @@ const Home = () => {
                     </ul>
                   </nav>
                 </div>
-              </header>
+              </header> */}
+              <MainHeader />
               <span className={styles.coming__soon}>
                 Creative Arts Department, University of Lagos
               </span>
